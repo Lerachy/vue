@@ -6,7 +6,7 @@
 
 <script>
 import MyHeader from "./components/utils/navigator"
-import PathLoader from "../../vue-element-admin/src/views/components-demo/mixin"
+import PathLoader from "./components/pathtext"
 import ReasultPic from "./components/utils/reasultpic"
 import HomePage from "./components/pages/homepage"
 

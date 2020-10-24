@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import axios from 'axios'
-import PathLoader from '../../../vue-element-admin/src/views/components-demo/mixin'
+import PathLoader from '../components/pathtext'
 import ReasultPic from '../components/utils/reasultpic'
 import Home from '../components/pages/homepage'
 import page404 from '../components/pages/404'
@@ -19,8 +19,8 @@ let router=new Router({
       component:Home,
       children:[
         {
-          path:'/home/pathloader',
-          name:'pathloader',
+          path:'/home/pathload',
+          name:'pathload',
           component:PathLoader
         },
         {

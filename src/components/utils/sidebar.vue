@@ -2,7 +2,7 @@
 <template>
     <div class="side-bar-wrapper">
       <el-menu class="my-sidebar" :collapse="isMenuCollapsed" :router="true">
-        <el-menu-item index="22" route="/home/pathloader">
+        <el-menu-item index="22" route="/home/pathload">
           <i class="el-icon-upload2"></i>
           <span slot="title">路径</span>
         </el-menu-item>

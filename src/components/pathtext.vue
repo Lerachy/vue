@@ -1,62 +1,46 @@
 <template>
-  <div class="mixin-components-container">
-
-    <el-row :gutter="20" style="margin-top:50px;">
-      <el-col :span="6">
-        <el-card class="box-card">
-          <div slot="header" class="clearfix">
-            <span>Material Design 的input</span>
-          </div>
-          <div style="height:100px;">
-            <el-form :model="demo" :rules="demoRules">
-              <el-form-item prop="title">
-                <md-input v-model="demo.title" icon="el-icon-search" name="title" placeholder="输入标题">
-                  标题
-                </md-input>
-              </el-form-item>
-            </el-form>
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
+  <div class="app-container my-pathload">
+    <el-breadcrumb separator-class="el-icon-arrow-right">
+      <el-breadcrumb-item>痕迹检测系统</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/home/pathload' }">路径上传</el-breadcrumb-item>
+    </el-breadcrumb>
+    <el-form ref="form" :model="form" label-width="120px" style="margin-top: 150px;">
+      <el-form-item label="输入路径">
+        <el-input v-model="form.path" />
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="onSubmit">确认</el-button>
+      </el-form-item>
+    </el-form>
   </div>
 </template>
 
 <script>
-import MdInput from 'C:/Users/monakit/vue-element-admin/src/components/MDinput'
-
 export default {
-  name: 'ComponentMixinDemo',
-  components: {
-    MdInput
-  },
   data() {
-    const validate = (rule, value, callback) => {
-      if (value.length !== 6) {
-        callback(new Error('请输入六个字符'))
-      } else {
-        callback()
+    return {
+      form: {
+        path: ''
       }
     }
-    return {
-      demo: {
-        title: ''
-      },
-      demoRules: {
-        title: [{ required: true, trigger: 'change', validator: validate }]
-      }
+  },
+  methods: {
+    onSubmit() {
+      this.$message('submit!')
     }
   }
 }
 </script>
 
 <style scoped>
-.mixin-components-container {
-  background-color: #f0f2f5;
-  padding: 30px;
-  min-height: calc(100vh - 84px);
+.app-container {
+  padding: 20px;
 }
-.component-item{
-  min-height: 100px;
+.my-pathload{
+  width: 100%;
+  height: calc(100% - 26px);
+  padding: 0 30px;
+  box-sizing: border-box;
 }
 </style>
+
